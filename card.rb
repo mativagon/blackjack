@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'deck'
 
 class Card
@@ -12,7 +14,7 @@ class Card
     @suit = suit
   end
 
-  def score(current_score = nil)
+  def score
     if Deck::NUMBERED_CARD_VALUE.include?(@value)
       @value
     elsif Deck::PICTURED_CARD_VALUE.include?(@value)
