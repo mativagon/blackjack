@@ -22,7 +22,7 @@ class Deck
     @cards.shuffle!
   end
 
-  def deal_cards
+  def deal_card
     @cards.pop
   end
 end

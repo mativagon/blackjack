@@ -3,7 +3,8 @@
 require_relative 'card'
 
 class Player
-  attr_accessor :name, :bank, :hand
+  attr_accessor :bank, :hand
+  attr_reader :name
 
   def initialize(name)
     @name = name
@@ -22,6 +23,7 @@ class Player
     @hand.count { |card| card.value == 'A' }.times do
       sum += sum <= 10 ? 11 : 1
     end
+
     sum
   end
 

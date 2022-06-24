@@ -16,8 +16,8 @@ class Interface
     @dealer = Player.new('Дилер')
     @deck = Deck.new
 
-    2.times { @player.hand << @deck.deal_cards }
-    2.times { @dealer.hand << @deck.deal_cards }
+    2.times { @player.hand << @deck.deal_card }
+    2.times { @dealer.hand << @deck.deal_card }
 
     puts 'Идёт раздача карт...'
     sleep(3)
@@ -48,7 +48,7 @@ class Interface
 
     case input
     when 1
-      @player.hand << @deck.deal_cards unless @player.hand.count == MAX_CARDS_HAND
+      @player.hand << @deck.deal_card unless @player.hand.count == MAX_CARDS_HAND
 
       puts 'Идёт раздача карт...'
       sleep(3)
@@ -78,7 +78,7 @@ class Interface
     sleep(3)
 
     if @dealer.hand.count == 2 && @dealer.current_score < 17
-      @dealer.hand << @deck.deal_cards
+      @dealer.hand << @deck.deal_card
 
       puts 'Дилер берет карту...'
       sleep(3)
@@ -144,8 +144,8 @@ class Interface
 
     @deck = Deck.new
 
-    2.times { @player.hand << @deck.deal_cards }
-    2.times { @dealer.hand << @deck.deal_cards }
+    2.times { @player.hand << @deck.deal_card }
+    2.times { @dealer.hand << @deck.deal_card }
 
     puts 'Идёт раздача карт...'
     sleep(3)
