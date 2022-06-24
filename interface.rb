@@ -10,6 +10,7 @@ class Interface
     puts 'Введите ваше имя:'
 
     name = gets.chomp.to_s
+    name = 'Игрок' if name.empty?
 
     @player = Player.new(name)
     @dealer = Player.new('Дилер')
@@ -62,7 +63,12 @@ class Interface
       dealer_turn
     when 3
       game_results
+    else
+      raise 'Неверный ввод, введите число от 1 до 3!'
     end
+  rescue RuntimeError => e
+    puts e.message
+    retry
   end
 
   def dealer_turn
@@ -127,7 +133,7 @@ class Interface
     case input
     when 1
       next_round
-    when 2
+    else
       puts "#{@player.name}, до новых встреч!"
       exit
     end
