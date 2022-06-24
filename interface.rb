@@ -21,10 +21,13 @@ class Interface
     puts 'Идёт раздача карт...'
     sleep(3)
 
+    puts "Ваш банк - #{@player.bank}$"
+
     @player.make_bet
     @dealer.make_bet
 
     puts 'Принимаются ставки...'
+    puts 'Ваша ставка 10$'
     sleep(3)
 
     player_turn
@@ -145,6 +148,7 @@ class Interface
     @dealer.make_bet
 
     puts 'Принимаются ставки...'
+    puts "Ваш банк - #{@player.bank}$"
     sleep(3)
 
     player_turn
