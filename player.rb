@@ -6,6 +6,9 @@ class Player
   attr_accessor :bank, :hand
   attr_reader :name
 
+  ACE_ELEVEN = 11
+  ACE_ONE = 1
+
   def initialize(name)
     @name = name
     @bank = 100
@@ -21,7 +24,7 @@ class Player
     @hand.each { |card| sum += card.score unless card.value == 'A' }
 
     @hand.count { |card| card.value == 'A' }.times do
-      sum += sum <= 10 ? 11 : 1
+      sum += sum <= 10 ? ACE_ELEVEN : ACE_ONE
     end
 
     sum

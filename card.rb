@@ -5,8 +5,6 @@ require_relative 'deck'
 class Card
   attr_reader :value, :suit
 
-  ACE_ELEVEN = 11
-  ACE_ONE = 1
   PICTURES_VALUE = 10
 
   def initialize(value, suit)

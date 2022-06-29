@@ -5,7 +5,6 @@ require_relative 'card'
 class Deck
   attr_reader :cards
 
-  CARD_VALUE = { numbers: ('2'..'10').to_a, pictures: %w[J Q K A] }.freeze
   NUMBERED_CARD_VALUE = [2, 3, 4, 5, 6, 7, 8, 9, 10].freeze
   PICTURED_CARD_VALUE = %w[J Q K A].freeze
 
